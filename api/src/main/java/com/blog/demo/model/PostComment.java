@@ -11,19 +11,20 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "posts")
-public class Post {
+@Table(name = "post_comments")
+public class PostComment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
+    @ManyToOne
+    @JoinColumn(name="id_post", referencedColumnName="id")
+    private Post post;
+
     @Column(name = "information")
     private String information;
-
-    @Column(name = "link")
-    private String link;
 
     @Column(name = "active")
     private Boolean active;
@@ -33,14 +34,6 @@ public class Post {
     private User usuCriacao;
 
     @Column(name = "date_creation")
-    private Date dataCreation;
-
-    @Column(name = "name")
-    private String name;
-
-
-    public Post(Integer id){
-        this.id = id;
-    }
+    private Date dateCreation;
 
 }

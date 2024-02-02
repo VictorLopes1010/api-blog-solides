@@ -1,0 +1,24 @@
+package com.blog.demo.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class PostAndCommentsDTO {
+    private Integer id;
+
+    private String information;
+
+    private String link;
+
+    private Integer usuCreationId;
+
+    List<SearchPostCommentDTO> comments;
+}
