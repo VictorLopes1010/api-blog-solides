@@ -1,5 +1,6 @@
 package com.blog.demo.model;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,19 +12,13 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "posts")
-public class Post {
+@Table(name = "albuns")
+public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-
-    @Column(name = "information")
-    private String information;
-
-    @Column(name = "link")
-    private String link;
 
     @Column(name = "active")
     private Boolean active;
@@ -32,14 +27,13 @@ public class Post {
     @JoinColumn(name="usu_creation", referencedColumnName="id")
     private User usuCriacao;
 
-    @Column(name = "date_creation")
+    @Column(name = "dataCriacao")
     private Date dataCreation;
 
     @Column(name = "name")
     private String name;
 
-
-    public Post(Integer id){
+    public Album(Integer id){
         this.id = id;
     }
 

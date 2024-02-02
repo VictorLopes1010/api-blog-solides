@@ -2,7 +2,6 @@ package com.blog.demo.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,27 +13,36 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "usuarios")
-public class Usuario implements UserDetails {
+@Table(name = "users")
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "nome")
-    private String nome;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "senha")
-    private String senha;
+    @Column(name = "password")
+    private String password;
 
-    public Usuario(String email, String nome, String senha){
+    public User(Integer id){
+        this.id = id;
+    }
+
+    public User(Integer id, String name, String email){
+        this.id = id;
+        this.name = name;
         this.email = email;
-        this.nome = nome;
-        this.senha = senha;
+    }
+    public User(String email, String name, String password){
+        this.email = email;
+        this.name = name;
+        this.password = password;
     }
 
     @Override
@@ -44,7 +52,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getPassword() {
-        return senha;
+        return password;
     }
 
     @Override
