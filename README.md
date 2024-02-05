@@ -10,3 +10,8 @@ Bem-vindo ao projeto de API Java da Solides! Este projeto é uma aplicação RES
 - **Maven**: Utilizado para gerenciar as dependências e facilitar o processo de construção e empacotamento do projeto.
 - **Java Persistence API (JPA)**: JPA é uma especificação do Java que define uma API para mapeamento objeto-relacional e manipulação de dados. Ele simplifica a interação com o banco de dados e promove um código mais limpo e orientado a objetos.
 - **Spring MVC**: Adotamos o Spring MVC para implementar o padrão de arquitetura MVC, separando as responsabilidades do modelo, visão e controle. Isso melhora a modularidade, testabilidade e escalabilidade do código.
+
+## Executando o Projeto
+
+### Para iniciar a aplicação, execute o seguinte comando Maven:
+- mvn spring-boot:run
